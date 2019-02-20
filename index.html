@@ -5,10 +5,11 @@
   </head>
   <body>
     <main id="main">
-      <a href="#" onclick="loadIssue();">Load GitHub Issue</a>
+      <a href="#" onclick="loadIssues();">Load GitHub Issue</a>
     </main>
 
     <script id="issue-template" type="text/x-handlebars-template">
+      {{#each this}}
       <article>
         <header>
           <h3>Issue #{{number}} ({{state}})</h3>
@@ -18,6 +19,7 @@
           <a href="{{url}}">created  {{created_at}}</a>
         </footer>
       </article>
+      {{/each}}
     </script>
 
     <script src="handlebars.js"></script>
